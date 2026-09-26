@@ -442,6 +442,12 @@ Things we know are wrong and haven't fixed yet.
   the full-speed rate, so the columns end up half as far apart as they
   should. The fix is to apply the speed factor to the interval, or to refuse
   to print when it isn't 100 %.
+- **`PAINTRESS_TEST_TRIGGER` ignores `trigger_output_pin`.** Without `PIN=`
+  it looks for an `[output_pin]` named `trigger_print_pin`, a fixed name,
+  instead of the pin set in `trigger_output_pin`. With any other pin name the
+  command fails with "is not configured". Until it is fixed, pass the name
+  yourself, for example `PAINTRESS_TEST_TRIGGER PIN=paintress_trigger`. The
+  fix is to default `PIN` to `trigger_output_pin`.
 
 ## Use of AI
 
